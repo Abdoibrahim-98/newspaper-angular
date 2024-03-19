@@ -1,0 +1,48 @@
+/* Customize the NgbCarousel control icons */
+
+
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon {
+  font-family: 'Font Awesome 5 Free'; /* Specify Font Awesome font family */
+  font-size: 24px; /* Set the font size */
+  color: #000; /* Set the color */
+  background: transparent;  
+}
+
+@media screen and (min-width: 1024px) {
+
+  ::ng-deep .carousel-control-next{
+    right: 20px;
+    justify-content: end;
+  }
+  
+  ::ng-deep .carousel-control-prev{
+    left: 20px;
+    justify-content: start;
+  }
+  
+  ::ng-deep .carousel-control-prev-icon::before {
+    content: url('../../../assets/icons/arrow-left-solid.svg');
+  }
+  
+  ::ng-deep .carousel-control-next-icon::before {
+    content: url('../../../assets/icons/arrow-right-solid.svg');
+  }
+
+  ::ng-deep .carousel-indicators{
+    margin-bottom: 0;
+    bottom: -50px;
+  }
+
+  ::ng-deep .carousel-indicators [data-bs-target]{
+    background-color: #8bc34a;
+    height: 6px;
+    width: 22px;
+  }
+  ::ng-deep .carousel-indicators [data-bs-target]:not(.active) {
+    background-color: gray;
+    height: 6px;
+    width: 22px;
+  }
+  
+}

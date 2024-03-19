@@ -1,1 +1,21 @@
-<p>slider works!</p>
+<ngb-carousel [interval]="3000">
+  <ng-template ngbSlide *ngFor="let slide of slides">
+    <div class="picsum-img-wrapper" style="height: 550px;">
+      <div class="card mx-auto my-5 " style="max-width: 90%; height: 550px;">
+            <div class="row g-0" style="height: 100%;">
+              <div class="col-md-6">
+                <img [src]="slide" class="img-fluid" style="height: 100%;" alt="...">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
