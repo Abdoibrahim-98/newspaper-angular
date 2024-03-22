@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    NgxPaginationModule
   ],
   providers: [
     provideClientHydration()

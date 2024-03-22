@@ -1,5 +1,8 @@
 /* Customize the NgbCarousel control icons */
 
+::ng-deep .carousel-item{
+  margin-top: 50px;
+}
 
 ::ng-deep .carousel-control-prev-icon,
 ::ng-deep .carousel-control-next-icon {
@@ -8,6 +11,33 @@
   color: #000; /* Set the color */
   background: transparent;  
 }
+@media screen and (min-width: 768px){
+  .contents{
+    padding: 50px;
+  }
+  
+  .img-fluid{
+    height: 500px;
+  }
+  .caption {
+    font-size: 1.3rem;
+   }
+} 
+@media screen and (max-width: 768px){
+ 
+ .img-div{
+  height: 250px !important;
+  width: 100% !important;
+ }
+ .img-div img{
+  width: 100% !important;
+  height: 100% !important;
+ }
+ .contents{
+  padding-top: 20px;
+}
+
+} 
 
 @media screen and (min-width: 1024px) {
 
@@ -32,17 +62,50 @@
   ::ng-deep .carousel-indicators{
     margin-bottom: 0;
     bottom: -50px;
-  }
+  }  
+}
 
-  ::ng-deep .carousel-indicators [data-bs-target]{
-    background-color: #8bc34a;
-    height: 6px;
-    width: 22px;
-  }
-  ::ng-deep .carousel-indicators [data-bs-target]:not(.active) {
-    background-color: gray;
-    height: 6px;
-    width: 22px;
-  }
-  
+::ng-deep .carousel-indicators [data-bs-target]{
+  background-color: #8bc34a;
+  height: 6px;
+  width: 22px;
+}
+::ng-deep .carousel-indicators [data-bs-target]:not(.active) {
+  background-color: #6c757d;
+  height: 6px;
+  width: 22px;
+}
+
+.custom-card{
+  border-radius: 0 !important;
+  border: none;
+  background-color: #f8f9fa;
+}
+
+.contents{
+  width: 100%;
+  font-size: 1.2rem;
+  height: auto;
+  line-height: 1.7;
+}
+
+.caption {
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #6c757d;
+}
+
+.contents h2{
+  font-size: 26px;
+}
+
+.contents a{
+  text-decoration: none;
+  color: #000;
+}
+
+
+.details {
+  margin-bottom: 1rem !important;
+  color: #6c757d;
 }

@@ -73,7 +73,7 @@
         padding: 10px 0 10px 20px;
     }
     .item:hover {
-        color: #8bc34a;
+        color: rgb(139, 195, 74);
     }
     .item.active{
         color: #8bc34a;

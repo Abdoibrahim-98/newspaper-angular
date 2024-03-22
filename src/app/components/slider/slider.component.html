@@ -1,16 +1,22 @@
 <ngb-carousel [interval]="3000">
   <ng-template ngbSlide *ngFor="let slide of slides">
-    <div class="picsum-img-wrapper" style="height: 550px;">
-      <div class="card mx-auto my-5 " style="max-width: 90%; height: 550px;">
+    <div class="picsum-img-wrapper">
+      <div class="card custom-card mx-auto my-5 " style="max-width: 90%;">
             <div class="row g-0" style="height: 100%;">
-              <div class="col-md-6">
-                <img [src]="slide" class="img-fluid" style="height: 100%;" alt="...">
+              <div class="col-md-6 img-div" style="height: 100%;">
+                <img [src]="slide" class="img-fluid" style=" object-fit: fill;" alt="...">
               </div>
               <div class="col-md-6">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                <div class="card-body p-0" style="height: 100%; width: 100%;">
+                  <div class="contents">
+                    <span class="caption">Editor's Pick</span>
+                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                    <p class="mb-3 details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?</p>
+                    <div class="post-meta">
+                    <span class="d-block" style="color: #6c757d;"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
+                    <span class="date-read" style="color: #6c757d;">Jun 14 <span class="mx-1"style="color: #6c757d;" >•</span> 3 min read <span class="fa-solid fa-star" style="color: #6c757d;"></span></span>
+                    </div>
+                    </div>
                 </div>
               </div>
             </div>
