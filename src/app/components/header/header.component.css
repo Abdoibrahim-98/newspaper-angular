@@ -32,6 +32,7 @@
 
 .search-input:focus{
     box-shadow: none;
+    border-bottom: 1px solid #8bc34a;
 }
 
 .search-btn{
