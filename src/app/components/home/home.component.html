@@ -367,11 +367,14 @@
     </div>
     <div class="row4 row my-5 mx-md-5">
       <div class="col-md-8">
+        <div class="section-title col-12">
+          <h2>Recent News</h2>
+        </div>
         <div class="col-12" *ngFor="let item of items | paginate: { itemsPerPage: pageSize, currentPage: page }">
           <div class="card mb-3 col-12">
             <div class="row g-0">
               <div class="col-8">
-                <div class="card-body">
+                <div class="card-body px-0">
                   <div class="trend-contents">
                     <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
                     <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
@@ -383,7 +386,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
+              <div class="col-4 img-height-small-screen" style="height: 220px;">
                 <img
                   [src]="item" style="height: 100% !important;"
                   class="img-fluid custom-img-card" alt="...">
@@ -484,3 +487,7 @@
       </div>
     </div>
   </div>
+  </div>
+</div>
+<app-subscribe></app-subscribe>
+<app-footer></app-footer>

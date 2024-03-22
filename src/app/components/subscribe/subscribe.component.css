@@ -1,0 +1,48 @@
+.subscribe{
+    width: 100%;
+    padding: 7rem 0;
+}
+
+.subscribe form h2 {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.subscribe form p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.search-input{
+    margin-right: 10px;
+    height: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border: none;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    width: 80%;
+}
+
+.search-input:focus{
+    box-shadow: none;
+}
+
+.search-btn{
+    background-color: #000;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    height: 55px;
+    width: 70px;
+}
+
+.search-btn:hover, .search-btn::selection{
+    background-color: #8bc34a;
+}
+
+.search-btn svg{
+    height: 16px;
+    width: 16px;
+}

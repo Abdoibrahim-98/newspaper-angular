@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     FooterComponent,
     ContactComponent,
-    CategoryComponent
+    CategoryComponent,
+    SubscribeComponent
   ],
   imports: [
     BrowserModule,
