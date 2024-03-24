@@ -1,20 +1,20 @@
 <ngb-carousel [interval]="3000">
-  <ng-template ngbSlide *ngFor="let slide of slides">
+  <ng-template ngbSlide *ngFor="let article of topArticles.slice(0,3)">
     <div class="picsum-img-wrapper">
       <div class="card custom-card mx-auto my-5 " style="max-width: 90%;">
             <div class="row g-0" style="height: 100%;">
               <div class="col-md-6 img-div" style="height: 100%;">
-                <img [src]="slide" class="img-fluid" style=" object-fit: fill;" alt="...">
+                <img [src]="article.urlToImage? article.urlToImage:'../../assets/images/latestNews.jpg'" class="img-fluid" style=" object-fit: fill;" alt="...">
               </div>
               <div class="col-md-6">
                 <div class="card-body p-0" style="height: 100%; width: 100%;">
                   <div class="contents">
-                    <span class="caption">Editor's Pick</span>
-                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3 details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?</p>
+                    <span class="caption">Recent News</span>
+                    <h2><a href={{article.url}}>{{article.title}}</a></h2>
+                    <p class="mb-3 details">{{article.description}}</p>
                     <div class="post-meta">
-                    <span class="d-block" style="color: #6c757d;"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
-                    <span class="date-read" style="color: #6c757d;">Jun 14 <span class="mx-1"style="color: #6c757d;" >•</span> 3 min read <span class="fa-solid fa-star" style="color: #6c757d;"></span></span>
+                    <span class="d-block" style="color: #6c757d;"><a href="#">{{article.author}}</a> in <a href="#">{{article.source.name}}</a></span>
+                    <span class="date-read" style="color: #6c757d;">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1"style="color: #6c757d;" >•</span> {{article.minutesAgo}} min read <span class="fa-solid fa-star" style="color: #6c757d;"></span></span>
                     </div>
                     </div>
                 </div>

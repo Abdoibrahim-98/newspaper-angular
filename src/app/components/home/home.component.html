@@ -1,85 +1,42 @@
 <div class="container-fluid">
-  <app-slider></app-slider>
+  <app-slider [topArticles]="topArticles"></app-slider>
   <div class="site-section mx-auto">
     <div class="row1 row my-5 mx-md-5">
       <div class="col-12 col-md-12 col-lg-8">
         <div class="row">
           <div class="section-title col-12">
-            <h2>Editor's Pick</h2>
+            <h2>Sport</h2>
           </div>
           <div class="col-12 col-md-6">
-            <div class="card mb-3 ">
-              <img src="https://sm.ign.com/ign_tr/review/a/avatar-the/avatar-the-last-airbender-review_sbvj.jpg"
+            <div class="card mb-3 " *ngFor="let sport of sportArticles.slice(0, 1)">
+              <img [src]="sport.urlToImage? sport.urlToImage:'../../assets/images/latestNews.jpg'"
                 class="card-img-top" alt="...">
               <div class="card-body p-0">
-                <h2 style="margin-top: 30px;"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque,
-                  voluptatum quam quibusdam.</p>
+                <h2 style="margin-top: 30px;"><a href="#">{{sport.title}}</a></h2>
+                <p>{{sport.description}}</p>
                 <div class="post-meta">
-                  <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                  <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                  <span class="d-block"><a href="#">{{sport.author}}</a> in <a href="#">{{sport.source.name}}</a></span>
+                  <span class="date-read">{{ sport.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{sport.minutesAgo}} min read <span
                       class="fa-solid fa-star"></span></span>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <div class="card mb-3 col-12">
+            <div class="card mb-3 col-12" *ngFor="let sport of sportArticles.slice(1, 4)">
               <div class="row g-0">
                 <div class="col-4 img-height-small-screen" style="height: 150px;">
                   <img
-                    src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
-                    class="img-fluid custom-img-card" alt="...">
+                  [src]="sport.urlToImage? sport.urlToImage:'../../assets/images/latestNews.jpg'"
+                  class="img-fluid custom-img-card" alt="...">
                 </div>
                 <div class="col-8">
                   <div class="card-body">
                     <div class="trend-contents">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
+                      <h2 class="card-title"><a href="#">{{sport.title}}</a></h2>
                       <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 col-12">
-              <div class="row g-0">
-                <div class="col-4 img-height-small-screen" style="height: 150px;">
-                  <img
-                    src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
-                    class="img-fluid custom-img-card" alt="...">
-                </div>
-                <div class="col-8">
-                  <div class="card-body">
-                    <div class="trend-contents">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3 col-12">
-              <div class="row g-0">
-                <div class="col-4 img-height-small-screen" style="height: 150px;">
-                  <img
-                    src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
-                    class="img-fluid custom-img-card" alt="...">
-                </div>
-                <div class="col-8">
-                  <div class="card-body">
-                    <div class="trend-contents">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                        <span class="d-block"><a href="#">{{sport.author}}</a> in <a href="#">{{sport.source.name}}</a></span>
+                        <span class="date-read">{{ sport.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{sport.minutesAgo}} min read <span
                             class="fa-solid fa-star"></span></span>
                       </div>
                     </div>
@@ -96,78 +53,18 @@
             <h2>Trending</h2>
           </div>
           <div class="col-12">
-            <div class="card mb-3 col-12 numberd-card">
+            <div class="card mb-3 col-12 numberd-card" *ngFor="let article of topArticles.slice(0,4); let i= index;">
               <div class="row col-12" style="height: 100%;">
                 <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">01</p>
+                  <p class="text-center">0{{i+1}}</p>
                 </div>
                 <div class="col p-0">
                   <div class="card-body p-0" style="height: 150px;">
                     <div class="trend-contents px-2">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
+                      <h2 class="card-title"><a href="{{article.url}}">{{article.title}}</a></h2>
                       <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3 col-12 numberd-card">
-              <div class="row col-12" style="height: 100%;">
-                <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">02</p>
-                </div>
-                <div class="col p-0">
-                  <div class="card-body p-0" style="height: 150px;">
-                    <div class="trend-contents px-2">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3 col-12 numberd-card">
-              <div class="row col-12" style="height: 100%;">
-                <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">03</p>
-                </div>
-                <div class="col p-0">
-                  <div class="card-body p-0" style="height: 150px;">
-                    <div class="trend-contents px-2">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3 col-12 numberd-card">
-              <div class="row col-12" style="height: 100%;">
-                <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">04</p>
-                </div>
-                <div class="col p-0">
-                  <div class="card-body p-0" style="height: 150px;">
-                    <div class="trend-contents px-2" style="height: 100%;">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                        <span class="d-block"><a href="#">{{article.author}}</a> in <a href="#">{{article.source.name}}</a></span>
+                        <span class="date-read">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{article.minutesAgo}} min read <span
                             class="fa-solid fa-star"></span></span>
                       </div>
                     </div>
@@ -184,27 +81,24 @@
       </div>
     </div>
     <div class="row2 row my-5 mx-md-5">
-      <div class="card custom-card mx-md-auto my-5 " style="max-width: 100%;">
+      <div class="card custom-card mx-md-auto my-5 " style="max-width: 100%;" *ngFor="let article of healthArticles.slice(0,1)">
         <div class="row g-0" style="height: 100%;">
           <div class="col-md-6 img-div" style="height: auto;">
             <img
-              src="https://sportshub.cbsistatic.com/i/2021/03/18/ff8e65d3-1c90-4d27-8e0c-6b6046a20950/avatar-the-last-airbender-comics-worth-reading-1231568.jpg"
-              class="img-fluid" style="height: 100%; object-fit: fill;" alt="...">
+            [src]="article.urlToImage? article.urlToImage:'../../assets/images/latestNews.jpg'"
+            class="img-fluid" style="height: 100%; object-fit: fill;" alt="...">
           </div>
           <div class="col-md-6">
             <div class="card-body" style="height: 100%; width: 100%; background-color: #f8f9fa;">
               <div class="contents">
-                <span class="caption">Editor's Pick</span>
-                <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                <p class="mb-3 details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero
-                  obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni
-                  delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi
-                  consectetur doloribus aliquam accusantium beatae?</p>
+                <span class="caption">Health</span>
+                <h2><a href="{{article.url}}">{{article.title}}</a></h2>
+                <p class="mb-3 details">{{article.title}}</p>
                 <div class="post-meta">
-                  <span class="d-block" style="color: #6c757d;"><a href="#">Dave Rogers</a> in <a
-                      href="#">Food</a></span>
-                  <span class="date-read" style="color: #6c757d;">Jun 14 <span class="mx-1"
-                      style="color: #6c757d;">•</span> 3 min read <span class="fa-solid fa-star"
+                  <span class="d-block" style="color: #6c757d;"><a href="#">{{article.author}}</a> in <a
+                      href="#">{{article.source.name}}</a></span>
+                  <span class="date-read" style="color: #6c757d;">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1"
+                      style="color: #6c757d;">•</span> {{article.minutesAgo}} min read <span class="fa-solid fa-star"
                       style="color: #6c757d;"></span></span>
                 </div>
               </div>
@@ -219,65 +113,21 @@
           <h2>Politics</h2>
         </div>
 
-          <div class="card mb-3 col-12">
+          <div class="card mb-3 col-12" *ngFor="let politicArticle of politicArticles.slice(0,3)">
             <div class="row g-0">
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
+              <div class="col-4 img-height-small-screen">
                 <img
-                  src="https://m.media-amazon.com/images/M/MV5BODc5YTBhMTItMjhkNi00ZTIxLWI0YjAtNTZmOTY0YjRlZGQ0XkEyXkFqcGdeQXVyODUwNjEzMzg@._V1_FMjpg_UX1000_.jpg"
-                  class="img-fluid custom-img-card" alt="...">
+                [src]="politicArticle.urlToImage? politicArticle.urlToImage:'../../assets/images/business.jpg'  " 
+                class="img-fluid custom-img-card" alt="...">
               </div>
               <div class="col-8">
                 <div class="card-body">
                   <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
+                    <h2 class="card-title"><a href="{{politicArticle?.url}}">{{politicArticle?.title}}</a></h2>
+                    <p class="mb-3">{{politicArticle?.description}}</p>
                     <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 col-12">
-            <div class="row g-0">
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
-                <img
-                  src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
-                  class="img-fluid custom-img-card" alt="...">
-              </div>
-              <div class="col-8">
-                <div class="card-body">
-                  <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3 col-12">
-            <div class="row g-0">
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
-                <img
-                  src="https://nextshark.b-cdn.net/wp-content/uploads/2022/12/Temp-800x425-5.png?width=1536&auto_optimize=medium"
-                  class="img-fluid custom-img-card" alt="...">
-              </div>
-              <div class="col-8">
-                <div class="card-body">
-                  <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                      <span class="d-block"><a href="#">{{politicArticle.author? politicArticle.author : 'Unkonwn'}}</a> in <a href="#">{{politicArticle?.source.name}}</a></span>
+                      <span class="date-read">{{ politicArticle.publishedAt | date:'MMM d' }}<span class="mx-1">•</span> {{politicArticle?.minutesAgo}} <span
                           class="fa-solid fa-star"></span></span>
                     </div>
                   </div>
@@ -294,67 +144,21 @@
             <h2>Business</h2>
           </div>
             
-          <div class="card mb-3 col-12">
+          <div class="card mb-3 col-12" *ngFor="let businessArticle of businessArticles">
             <div class="row g-0">
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
+              <div class="col-4 img-height-small-screen">
                 <img
-                  src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
+                  [src]="businessArticle.urlToImage? businessArticle.urlToImage:'../../assets/images/business.jpg'  "
                   class="img-fluid custom-img-card" alt="...">
               </div>
               <div class="col-8">
                 <div class="card-body">
                   <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
+                    <h2 class="card-title"><a href="{{businessArticle.url}}">{{businessArticle.title}}</a></h2>
+                    <p class="mb-3">{{businessArticle.description}}</p>
                     <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mb-3 col-12">
-            <div class="row g-0">
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
-                <img
-                  src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
-                  class="img-fluid custom-img-card" alt="...">
-              </div>
-              <div class="col-8">
-                <div class="card-body">
-                  <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mb-3 col-12">
-            <div class="row g-0">
-              <div class="col-4 img-height-small-screen" style="height: 250px;">
-                <img
-                  src="https://cdn.vox-cdn.com/thumbor/U0YuvFlnRXaMaqtXlCMW9lCOq_s=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/72224209/2752.0.jpg"
-                  class="img-fluid custom-img-card" alt="...">
-              </div>
-              <div class="col-8">
-                <div class="card-body">
-                  <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                      <span class="d-block"><a href="#">{{businessArticle.author? businessArticle.author : 'Unkonwn'}}</a> in <a href="#">{{businessArticle.source.name}}</a></span>
+                      <span class="date-read">{{ businessArticle.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{businessArticle.minutesAgo}} min read <span
                           class="fa-solid fa-star"></span></span>
                     </div>
                   </div>
@@ -370,17 +174,17 @@
         <div class="section-title col-12">
           <h2>Recent News</h2>
         </div>
-        <div class="col-12" *ngFor="let item of items | paginate: { itemsPerPage: pageSize, currentPage: page }">
+        <div class="col-12" *ngFor="let article of topArticles | paginate: { itemsPerPage: pageSize, currentPage: page }">
           <div class="card mb-3 col-12">
             <div class="row g-0">
               <div class="col-8">
                 <div class="card-body px-0">
                   <div class="trend-contents">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium neque, voluptatum quam quibusdam.</p>
+                    <h2 class="card-title"><a href="{{article.url}}">{{article.title}}</a></h2>
+                    <p class="mb-3">{{article.description}}</p>
                     <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                      <span class="d-block"><a href="#">{{article.author}}</a> in <a href="#">{{article.source.name}}</a></span>
+                      <span class="date-read">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{article.minutesAgo}} min read <span
                           class="fa-solid fa-star"></span></span>
                     </div>
                   </div>
@@ -388,7 +192,7 @@
               </div>
               <div class="col-4 img-height-small-screen" style="height: 220px;">
                 <img
-                  [src]="item" style="height: 100% !important;"
+                  [src]="article.urlToImage? article.urlToImage:'../../assets/images/latestNews.jpg'"style="height: 100% !important;"
                   class="img-fluid custom-img-card" alt="...">
               </div>
             </div>
@@ -401,18 +205,18 @@
           <h2>Popular Posts</h2>
         </div>
         <div class="col-12">
-          <div class="card mb-3 col-12 numberd-card">
+          <div class="card mb-3 col-12 numberd-card" *ngFor="let article of popularArticles.slice(0,4); let i= index;">
             <div class="row col-12" style="height: 100%;">
               <div class="col-auto px-0 number align-self-start">
-                <p class="text-center">01</p>
+                <p class="text-center">0{{i+1}}</p>
               </div>
               <div class="col p-0">
                 <div class="card-body p-0" style="height: 150px;">
                   <div class="trend-contents px-2">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
+                    <h2 class="card-title"><a href="{{article.url}}">{{article.title}}</a></h2>
                     <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                      <span class="d-block"><a href="#">{{article.author}}</a> in <a href="#">{{article.source.name}}</a></span>
+                      <span class="date-read">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{article.minutesAgo}} min read <span
                           class="fa-solid fa-star"></span></span>
                     </div>
                   </div>
@@ -420,67 +224,6 @@
               </div>
             </div>
           </div>
-
-          <div class="card mb-3 col-12 numberd-card">
-            <div class="row col-12" style="height: 100%;">
-              <div class="col-auto px-0 number align-self-start">
-                <p class="text-center">02</p>
-              </div>
-              <div class="col p-0">
-                <div class="card-body p-0" style="height: 150px;">
-                  <div class="trend-contents px-2">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mb-3 col-12 numberd-card">
-            <div class="row col-12" style="height: 100%;">
-              <div class="col-auto px-0 number align-self-start">
-                <p class="text-center">03</p>
-              </div>
-              <div class="col p-0">
-                <div class="card-body p-0" style="height: 150px;">
-                  <div class="trend-contents px-2">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mb-3 col-12 numberd-card">
-            <div class="row col-12" style="height: 100%;">
-              <div class="col-auto px-0 number align-self-start">
-                <p class="text-center">04</p>
-              </div>
-              <div class="col p-0">
-                <div class="card-body p-0" style="height: 150px;">
-                  <div class="trend-contents px-2" style="height: 100%;">
-                    <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                    <div class="post-meta">
-                      <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                      <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                          class="fa-solid fa-star"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <p>
             <a href="#" class="more">See All Popular<span class="fa-solid fa-angle-right"></span></a>
           </p>

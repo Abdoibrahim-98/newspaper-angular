@@ -10,7 +10,13 @@ import { CategoryComponent } from './components/category/category.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { SportComponent } from './components/sport/sport.component';
+import { HealthComponent } from './components/health/health.component';
+import { DesignComponent } from './components/design/design.component';
+import { BusinessComponent } from './components/business/business.component';
+import { PoliticsComponent } from './components/politics/politics.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +27,19 @@ import { SubscribeComponent } from './components/subscribe/subscribe.component';
     FooterComponent,
     ContactComponent,
     CategoryComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    SportComponent,
+    HealthComponent,
+    DesignComponent,
+    BusinessComponent,
+    PoliticsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbCarouselModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AppRoutingModule
   ],
   providers: [
     provideClientHydration()

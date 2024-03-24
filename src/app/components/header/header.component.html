@@ -35,14 +35,14 @@
             <button class="btn-close d-lg-none px-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <a class="nav-link item first-item active"  href="#">home</a>
-            <a class="nav-link item " href="#">categories</a>
-            <a class="nav-link item" href="#">politics</a>
-            <a class="nav-link item" href="#">busniess</a>
-            <a class="nav-link item" href="#">health</a>
-            <a class="nav-link item" href="#">design</a>
-            <a class="nav-link item" href="#">sport</a>
-            <a class="nav-link item" href="#">contact</a>
+            <a class="nav-link item first-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >home</a>
+            <a class="nav-link item " >categories</a>
+            <a class="nav-link item" routerLink="/politics" routerLinkActive="active">politics</a>
+            <a class="nav-link item" routerLink="/business" routerLinkActive="active">business</a>
+            <a class="nav-link item" routerLink="/health" routerLinkActive="active">health</a>
+            <a class="nav-link item" routerLink="/design" routerLinkActive="active">design</a>
+            <a class="nav-link item" routerLink="/sport" routerLinkActive="active">sport</a>
+            <a class="nav-link item" routerLink="/contact" routerLinkActive="active">contact</a>
           </div>
         </div>
       </div>
