@@ -35,78 +35,18 @@
             <h2>Popular Posts</h2>
           </div>
           <div class="col-12">
-            <div class="card mb-3 col-12 numberd-card">
+            <div class="card mb-3 col-12 numberd-card" *ngFor="let article of popularArticles.slice(0,4); let i= index;">
               <div class="row col-12" style="height: 100%;">
                 <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">01</p>
+                  <p class="text-center">0{{i+1}}</p>
                 </div>
                 <div class="col p-0">
                   <div class="card-body p-0" style="height: 150px;">
                     <div class="trend-contents px-2">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
+                      <h2 class="card-title"><a href="{{article.url}}">{{article.title}}</a></h2>
                       <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="card mb-3 col-12 numberd-card">
-              <div class="row col-12" style="height: 100%;">
-                <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">02</p>
-                </div>
-                <div class="col p-0">
-                  <div class="card-body p-0" style="height: 150px;">
-                    <div class="trend-contents px-2">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="card mb-3 col-12 numberd-card">
-              <div class="row col-12" style="height: 100%;">
-                <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">03</p>
-                </div>
-                <div class="col p-0">
-                  <div class="card-body p-0" style="height: 150px;">
-                    <div class="trend-contents px-2">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
-                            class="fa-solid fa-star"></span></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="card mb-3 col-12 numberd-card">
-              <div class="row col-12" style="height: 100%;">
-                <div class="col-auto px-0 number align-self-start">
-                  <p class="text-center">04</p>
-                </div>
-                <div class="col p-0">
-                  <div class="card-body p-0" style="height: 150px;">
-                    <div class="trend-contents px-2" style="height: 100%;">
-                      <h2 class="card-title"><a href="#">News Needs to Meet Its Audiences Where They Are</a></h2>
-                      <div class="post-meta">
-                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
-                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                        <span class="d-block"><a href="#">{{article.author}}</a> in <a href="#">{{article.source.name}}</a></span>
+                        <span class="date-read">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{article.minutesAgo}} min read <span
                             class="fa-solid fa-star"></span></span>
                       </div>
                     </div>

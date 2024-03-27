@@ -17,6 +17,8 @@ import { DesignComponent } from './components/design/design.component';
 import { BusinessComponent } from './components/business/business.component';
 import { PoliticsComponent } from './components/politics/politics.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,14 +34,16 @@ import { AppRoutingModule } from './app-routing.module';
     HealthComponent,
     DesignComponent,
     BusinessComponent,
-    PoliticsComponent
+    PoliticsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbCarouselModule,
     NgxPaginationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

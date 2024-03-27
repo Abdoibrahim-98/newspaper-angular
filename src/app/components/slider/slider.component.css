@@ -19,6 +19,10 @@
   .img-fluid{
     height: 500px;
   }
+
+  .img-div{
+    height: 500px !important;
+  }
   .caption {
     font-size: 1.3rem;
    }

@@ -1,0 +1,37 @@
+
+.card{
+    border-radius: 0 !important;
+    border: none;
+}
+
+.card img{
+    border-radius: 0;
+}
+
+h2{
+    line-height: 1;
+    font-size: 1.5rem;
+}
+   
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+span{
+    color: #ccc;
+}
+
+@media screen and (max-width: 350px) {
+    .card-body{
+        height: auto !important;
+    }
+
+    .numberd-card{
+        height: auto;
+    }
+
+    .img-height-small-screen{
+        height: auto !important;
+    }
+}

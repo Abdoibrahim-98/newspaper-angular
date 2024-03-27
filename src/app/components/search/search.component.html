@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+            <div class="card mb-3 col-12 col-md-6" *ngFor="let article of searchArticles">
+              <div class="row g-0">
+                <div class="col-4 img-height-small-screen" style="height: 150px;">
+                  <img
+                  [src]="article.urlToImage? article.urlToImage:'../../assets/images/latestNews.jpg'"
+                  class="img-fluid custom-img-card" alt="...">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <div class="trend-contents">
+                      <h2 class="card-title"><a href="#">{{article.title}}</a></h2>
+                      <div class="post-meta">
+                        <span class="d-block"><a href="#">{{article.author}}</a> in <a href="#">{{article.source.name}}</a></span>
+                        <span class="date-read">{{ article.publishedAt | date:'MMM d' }} <span class="mx-1">•</span> {{article.minutesAgo}} min read <span
+                            class="fa-solid fa-star"></span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+        </div>
+    </div>
+</div>

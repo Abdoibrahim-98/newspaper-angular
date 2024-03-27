@@ -31,16 +31,63 @@ export class ArticleService {
     return this.http.get( `${environment.ROOT_URL}top-headlines?country=us&category=health&apiKey=${environment.apiKey}`)
   }
   getTopDesignCategoryHeadlines(): Observable<any>{
-    return this.http.get( `${environment.ROOT_URL}top-headlines?country=us&category=design&apiKey=${environment.apiKey}`)
+    return this.http.get( `${environment.ROOT_URL}top-headlines?country=us&category=technology&apiKey=${environment.apiKey}`)
   }
   getTopSportCategoryHeadlines(): Observable<any>{
     return this.http.get( `${environment.ROOT_URL}top-headlines?country=us&category=sport&apiKey=${environment.apiKey}`)
   }
 
+  searchArticles(searchTerm: string): Observable<any> {
+    const url = `${environment.ROOT_URL}everything?q=${searchTerm}&sortBy=publishedAt&apiKey=${environment.apiKey}`;
+    return this.http.get(url);
+  }
+
   private sportArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
   sportArticles$ = this.sportArticlesSubject.asObservable();
 
+  private politicArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  politicArticles$ = this.politicArticlesSubject.asObservable();
+
+  private healthArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  healthArticles$ = this.healthArticlesSubject.asObservable();
+
+  private businessArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  businessArticles$ = this.businessArticlesSubject.asObservable();
+
+  private designArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  designArticles$ = this.designArticlesSubject.asObservable();
+
+  private popularArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  popularArticles$ = this.popularArticlesSubject.asObservable();
+  
+  private searchArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  searchArticles$ = this.searchArticlesSubject.asObservable();
+
   setSportArticles(articles: Article[]) {
     this.sportArticlesSubject.next(articles);
+  }
+
+  setPoliticArticles(articles: Article[]) {
+    this.politicArticlesSubject.next(articles);
+  }
+
+  setHealthArticles(articles: Article[]){
+    this.healthArticlesSubject.next(articles);
+  }
+
+  setBusinessArticles(articles:Article[]){
+    this.businessArticlesSubject.next(articles);
+  }
+
+  setDesignArticles(articles: Article[]){
+    this.designArticlesSubject.next(articles);
+  }
+
+  setPopularArticles(articles: Article[]){
+    this.popularArticlesSubject.next(articles);
+  }
+ 
+  setSearchArticles(articles: Article[]){
+    this.searchArticlesSubject.next(articles);
   }
 }
