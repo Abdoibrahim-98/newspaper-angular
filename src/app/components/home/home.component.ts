@@ -42,6 +42,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.articleService.popularArticles$.subscribe(articles => {
       this.popularArticles = articles;
     }));
+    this.subscriptions.push(this.articleService.topArticles$.subscribe(articles => {
+      this.topArticles = articles;
+    }));
   }
 
   ngOnInit(): void {

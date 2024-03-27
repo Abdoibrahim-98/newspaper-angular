@@ -65,6 +65,9 @@ export class ArticleService {
   
   private trendingArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
   trendingArticles$ = this.trendingArticlesSubject.asObservable();
+  
+  private topArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  topArticles$ = this.topArticlesSubject.asObservable();
 
   setSportArticles(articles: Article[]) {
     this.sportArticlesSubject.next(articles);
@@ -96,5 +99,9 @@ export class ArticleService {
   
   setTrendingArticles(articles: Article[]){
     this.trendingArticlesSubject.next(articles);
+  }
+ 
+  setTopArticles(articles: Article[]){
+    this.topArticlesSubject.next(articles);
   }
 }
