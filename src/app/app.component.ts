@@ -96,5 +96,18 @@ export class AppComponent implements OnInit{
       })
       this.articleService.setPopularArticles(this.popularArticles);
     });
+
+    this.articleService.getTopHeadlines().subscribe(data => {
+      this.topArticles = data.articles.map(article => {
+        const publishedAt = new Date(article.publishedAt);
+        const now = new Date();
+        const diff = Math.floor((now.getTime() - publishedAt.getTime()) / 60000);
+        return {
+          ...article, 
+          minutesAgo: diff
+        };
+      })
+      this.articleService.setTopArticles(this.topArticles);
+    });
   }
 }

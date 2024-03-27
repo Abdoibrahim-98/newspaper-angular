@@ -48,19 +48,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.articleService.getTopHeadlines().subscribe(data => {
-      this.topArticles = data.articles.map(article => {
-        const publishedAt = new Date(article.publishedAt);
-        const now = new Date();
-        const diff = Math.floor((now.getTime() - publishedAt.getTime()) / 60000);
-        return {
-          ...article, 
-          minutesAgo: diff
-        };
-      })
-      this.articleService.setTrendingArticles(this.topArticles);
-    });
+   
   }
+  
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
