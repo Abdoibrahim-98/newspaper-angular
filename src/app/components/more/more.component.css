@@ -1,14 +1,6 @@
-p{
-    color: #6c757d;
-}
-
 .card{
     border-radius: 0 !important;
     border: none;
-}
-
-.card img{
-    border-radius: 0;
 }
 
 .section-title {
@@ -18,12 +10,6 @@ p{
 .section-title h2{
    display: inline-block;
    border-bottom: 1px solid #000;
-}
-
-.custom-img-card{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 .numberd-card{
@@ -77,8 +63,4 @@ a{
     text-transform: uppercase;
     font-size: 1rem;
     cursor: pointer;
-}
-
-::ng-deep .current{
-    background-color: #8bc34a !important;
 }

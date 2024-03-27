@@ -62,6 +62,9 @@ export class ArticleService {
   
   private searchArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
   searchArticles$ = this.searchArticlesSubject.asObservable();
+  
+  private trendingArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
+  trendingArticles$ = this.trendingArticlesSubject.asObservable();
 
   setSportArticles(articles: Article[]) {
     this.sportArticlesSubject.next(articles);
@@ -89,5 +92,9 @@ export class ArticleService {
  
   setSearchArticles(articles: Article[]){
     this.searchArticlesSubject.next(articles);
+  }
+  
+  setTrendingArticles(articles: Article[]){
+    this.trendingArticlesSubject.next(articles);
   }
 }

@@ -19,6 +19,7 @@ import { PoliticsComponent } from './components/politics/politics.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { MoreComponent } from './components/more/more.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     DesignComponent,
     BusinessComponent,
     PoliticsComponent,
-    SearchComponent
+    SearchComponent,
+    MoreComponent
   ],
   imports: [
     BrowserModule,

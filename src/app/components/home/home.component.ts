@@ -55,6 +55,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           minutesAgo: diff
         };
       })
+      this.articleService.setTrendingArticles(this.topArticles);
     });
   }
   ngOnDestroy(): void {

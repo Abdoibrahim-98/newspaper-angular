@@ -74,7 +74,7 @@
             </div>
 
             <p>
-              <a href="#" class="more">See All Trends <span class="fa-solid fa-angle-right"></span></a>
+              <a routerLink="/more" class="more">See All Trends <span class="fa-solid fa-angle-right"></span></a>
             </p>
           </div>
         </div>
@@ -248,6 +248,9 @@
               </div>
           </div>
         </div>
+        <p *ngIf="!isCollapsed">
+          <a (click)="isCollapsed = !isCollapsed" class="more">See Less <span class="fa-solid fa-angle-left"></span></a>
+        </p>
     </div>
   </div>
   </div>
