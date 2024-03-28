@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
 
   constructor(private articleService: ArticleService){}
   ngOnInit(): void {
-    this.articleService.getTopBusinessCategoryHeadlines().subscribe(data => {
+    this.articleService.getTopCategoryHeadlines('business').subscribe(data => {
       this.businessArticles =  data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit{
       this.articleService.setBusinessArticles(this.businessArticles);
     });
 
-    this.articleService.getTopPoliticsCategoryHeadlines().subscribe(data => {
+    this.articleService.getTopCategoryHeadlines('politics').subscribe(data => {
       this.politicArticles =  data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit{
       this.articleService.setPoliticArticles(this.politicArticles);
     });
 
-    this.articleService.getTopSportCategoryHeadlines().subscribe(data => {
+    this.articleService.getTopCategoryHeadlines('sport').subscribe(data => {
       this.sportArticles =  data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit{
       })
       this.articleService.setSportArticles(this.sportArticles);
     });
-    this.articleService.getTopHealthCategoryHeadlines().subscribe(data => {
+    this.articleService.getTopCategoryHeadlines('health').subscribe(data => {
       this.healthArticles =  data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit{
       })
       this.articleService.setHealthArticles(this.healthArticles);
     });
-    this.articleService.getTopDesignCategoryHeadlines().subscribe(data => {
+    this.articleService.getTopCategoryHeadlines('technology').subscribe(data => {
       this.designArticles =  data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit{
       console.log(this.designArticles);
     });
 
-    this.articleService.getPopular().subscribe(data => {
+    this.articleService.getTopHeadlines('popularity').subscribe(data => {
       this.popularArticles =  data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
@@ -97,7 +97,7 @@ export class AppComponent implements OnInit{
       this.articleService.setPopularArticles(this.popularArticles);
     });
 
-    this.articleService.getTopHeadlines().subscribe(data => {
+    this.articleService.getTopHeadlines('publishedAt').subscribe(data => {
       this.topArticles = data.articles.map(article => {
         const publishedAt = new Date(article.publishedAt);
         const now = new Date();
