@@ -38,7 +38,7 @@ export class ArticleService {
   }
 
   searchArticles(searchTerm: string): Observable<any> {
-    const url = `${environment.ROOT_URL}everything?q=${searchTerm}&sortBy=publishedAt&apiKey=${environment.apiKey}`;
+    const url = `${environment.ROOT_URL}everything?q=${searchTerm}&from=2024-03-27&to=2024-03-27&sortBy=publishedAt&apiKey=${environment.apiKey}`;
     return this.http.get(url);
   }
 

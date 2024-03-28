@@ -13,7 +13,7 @@ export class MoreComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   constructor(private articleService: ArticleService){
-    this.subscriptions.push(this.articleService.trendingArticles$.subscribe(articles => {
+    this.subscriptions.push(this.articleService.topArticles$.subscribe(articles => {
       this.moreArticles = articles;
     }));
   }

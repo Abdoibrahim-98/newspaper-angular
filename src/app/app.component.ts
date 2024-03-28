@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ArticleService } from './services/article.service';
-import { Article } from './models/articles.model';
+import { ArticleService } from '@services/article.service';
+import { Article } from '@models/articles.model';
 
 
 @Component({

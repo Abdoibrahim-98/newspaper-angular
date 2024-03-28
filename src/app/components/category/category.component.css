@@ -18,6 +18,7 @@ p{
 .section-title h2{
    display: inline-block;
    border-bottom: 1px solid #000;
+   text-transform: capitalize;
 }
 
 .custom-img-card{
