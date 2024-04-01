@@ -1,27 +1,65 @@
-# Newspaper
+# Newspaper Project
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+This project is a responsive newspaper website built using Angular, HTML, and CSS. It fetches news articles from the NewsAPI and displays them in different categories such as top articles, business, politics, sports, health, design, and popular articles.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Display news articles from various categories
+- Responsive design for mobile and desktop
+- Navigation menu for easy access to different sections
+- Search functionality to find articles by keyword
+- Save articles to read later
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- HTML
+- CSS
+- Bootstrap
+- NewsAPI
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository: `git clone https://github.com/your/repository.git`
+2. Install dependencies: `npm install`
+3. Run the development server: `ng serve`
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Browse the different categories using the navigation menu.
+2. Click on an article to read the full content.
+3. Use the search bar to find articles by keyword.
+4. Click on the save button to add articles to your reading list.
+## Images
 
-## Running end-to-end tests
+### Screenshots
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![header and slider](https://github.com/Abdoibrahim-98/newspaper-angular/assets/109592393/6313151c-52e7-4e12-9274-0eca9a7dcf4a) | ![home-page](https://github.com/Abdoibrahim-98/newspaper-angular/assets/109592393/ce2af567-5470-4f91-890c-15c544c99a79)
+:-------------------------:|:-------------------------:
+**Header and Slider**        | **Home Page**
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![pagination](https://github.com/Abdoibrahim-98/newspaper-angular/assets/109592393/6bdb690b-71c6-429c-82df-328840cd5c22) | ![contact-page](https://github.com/Abdoibrahim-98/newspaper-angular/assets/109592393/c35bcdd8-825f-4c55-8258-129bb44ca299)
+:-------------------------:|:-------------------------:
+**Pagination**        | **Contact Page**
+
+
+
+
+![category](https://github.com/Abdoibrahim-98/newspaper-angular/assets/109592393/927186c0-4827-4c71-834e-a5248752442f) | ![footer](https://github.com/Abdoibrahim-98/newspaper-angular/assets/109592393/dacf8a7a-8d4d-499a-87ce-4125229dedfb)
+:-------------------------:|:-------------------------:
+**Category**        | **Footer**
+
+## Try It From Here (Deployed Version)
+
+- [Newspaper-app](https://newspaper-angular-two.vercel.app)
+
+## Credits
+
+- NewsAPI for providing the news articles
+- Bootstrap for the responsive design
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
