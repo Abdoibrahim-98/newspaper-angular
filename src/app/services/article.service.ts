@@ -26,65 +26,19 @@ export class ArticleService {
     return this.http.get(url);
   }
 
-  private sportArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  sportArticles$ = this.sportArticlesSubject.asObservable();
 
-  private politicArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  politicArticles$ = this.politicArticlesSubject.asObservable();
-
-  private healthArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  healthArticles$ = this.healthArticlesSubject.asObservable();
-
-  private businessArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  businessArticles$ = this.businessArticlesSubject.asObservable();
-
-  private designArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  designArticles$ = this.designArticlesSubject.asObservable();
-
-  private popularArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  popularArticles$ = this.popularArticlesSubject.asObservable();
   
   private searchArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
   searchArticles$ = this.searchArticlesSubject.asObservable();
   
-  private trendingArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
-  trendingArticles$ = this.trendingArticlesSubject.asObservable();
-  
   private topArticlesSubject: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
   topArticles$ = this.topArticlesSubject.asObservable();
 
-  setSportArticles(articles: Article[]) {
-    this.sportArticlesSubject.next(articles);
-  }
-
-  setPoliticArticles(articles: Article[]) {
-    this.politicArticlesSubject.next(articles);
-  }
-
-  setHealthArticles(articles: Article[]){
-    this.healthArticlesSubject.next(articles);
-  }
-
-  setBusinessArticles(articles:Article[]){
-    this.businessArticlesSubject.next(articles);
-  }
-
-  setDesignArticles(articles: Article[]){
-    this.designArticlesSubject.next(articles);
-  }
-
-  setPopularArticles(articles: Article[]){
-    this.popularArticlesSubject.next(articles);
-  }
  
   setSearchArticles(articles: Article[]){
     this.searchArticlesSubject.next(articles);
   }
   
-  setTrendingArticles(articles: Article[]){
-    this.trendingArticlesSubject.next(articles);
-  }
- 
   setTopArticles(articles: Article[]){
     this.topArticlesSubject.next(articles);
   }

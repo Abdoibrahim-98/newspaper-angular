@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Article } from '../../models/articles.model';
+import { Article } from '@models/articles.model';
 import { Subscription } from 'rxjs';
-import { ArticleService } from '../../services/article.service';
+import { ArticleService } from '@services/article.service';
 
 @Component({
   selector: 'app-more',
