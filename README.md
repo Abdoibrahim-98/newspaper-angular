@@ -9,7 +9,6 @@ This project is a responsive newspaper website built using Angular, HTML, and CS
 - Responsive design for mobile and desktop
 - Navigation menu for easy access to different sections
 - Search functionality to find articles by keyword
-- Save articles to read later
 
 ## Technologies Used
 
@@ -21,7 +20,7 @@ This project is a responsive newspaper website built using Angular, HTML, and CS
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your/repository.git`
+1. Clone the repository: `git clone https://github.com/Abdoibrahim-98/newspaper-angular`
 2. Install dependencies: `npm install`
 3. Run the development server: `ng serve`
 
@@ -30,7 +29,6 @@ This project is a responsive newspaper website built using Angular, HTML, and CS
 1. Browse the different categories using the navigation menu.
 2. Click on an article to read the full content.
 3. Use the search bar to find articles by keyword.
-4. Click on the save button to add articles to your reading list.
 ## Images
 
 ### Screenshots
